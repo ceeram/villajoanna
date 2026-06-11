@@ -86,26 +86,22 @@
     $("#mapFrame").src =
       `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
 
-    // Contact
-    const c = PROPERTY.contact;
-    const subject = encodeURIComponent(t.contact.mailSubject);
-    const cards = [];
-    if (c.agent) cards.push(`<div class="contact__card"><span class="contact__name">${c.agent}</span></div>`);
-    if (c.phone)
-      cards.push(
-        `<a class="contact__card contact__card--link" href="tel:${c.phone.replace(/\s/g, "")}">
-          <span class="contact__label">${t.contact.callLabel}</span>
-          <span class="contact__value">${c.phone}</span>
-        </a>`
-      );
-    if (c.email)
-      cards.push(
-        `<a class="contact__card contact__card--link" href="mailto:${c.email}?subject=${subject}">
-          <span class="contact__label">${t.contact.emailLabel}</span>
-          <span class="contact__value">${c.email}</span>
-        </a>`
-      );
-    $("#contactCards").innerHTML = cards.join("");
+    // Contact — one card per person, each with a Call link and a WhatsApp link.
+    const msg = encodeURIComponent(t.contact.message || "");
+    $("#contactCards").innerHTML = (PROPERTY.contacts || [])
+      .map((p) => {
+        const tel = p.phone.replace(/[^\d+]/g, ""); // keep digits and leading +
+        const wa = p.phone.replace(/[^\d]/g, ""); // digits only for wa.me
+        return `<div class="contact__card">
+          <span class="contact__name">${p.name}</span>
+          <span class="contact__value">${p.phone}</span>
+          <span class="contact__actions">
+            <a class="contact__btn" href="tel:${tel}">${t.contact.callLabel}</a>
+            <a class="contact__btn contact__btn--wa" href="https://wa.me/${wa}?text=${msg}" target="_blank" rel="noopener">${t.contact.whatsappLabel}</a>
+          </span>
+        </div>`;
+      })
+      .join("");
 
     // Documents
     renderDocuments(t);

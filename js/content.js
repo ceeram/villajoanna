@@ -99,12 +99,12 @@ const PROPERTY = {
     { key: "year", value: "1990" },
   ],
 
-  // How buyers reach you. Remove any card you don't want.
-  contact: {
-    agent: "[[Name]]",
-    phone: "[[+34 600 000 000]]",
-    email: "[[your@email.com]]",
-  },
+  // How buyers reach you. Each contact shows a Call link and a WhatsApp link
+  // (both derived from the phone number). Add or remove people freely.
+  contacts: [
+    { name: "Joanna", phone: "+49 1512 9133198" },
+    { name: "Dirk", phone: "+31 6 12147667" },
+  ],
 };
 
 /* -------------------------------------------------------------------------- */
@@ -164,8 +164,8 @@ const I18N = {
       title: "Arrange a viewing",
       lead: "Interested? Reach out and we'll be happy to show you around.",
       callLabel: "Call",
-      emailLabel: "Email",
-      mailSubject: "Viewing request — Villa Joanna, Badia Gran",
+      whatsappLabel: "WhatsApp",
+      message: "Hello, I'm interested in Villa Joanna in Badia Gran. Could we arrange a viewing?",
     },
     footer: { rights: "All rights reserved" },
   },
@@ -224,8 +224,8 @@ const I18N = {
       title: "Plan een bezichtiging",
       lead: "Interesse? Neem contact op en we leiden u graag rond.",
       callLabel: "Bel",
-      emailLabel: "E-mail",
-      mailSubject: "Bezichtigingsverzoek — Villa Joanna, Badia Gran",
+      whatsappLabel: "WhatsApp",
+      message: "Hallo, ik heb interesse in Villa Joanna in Badia Gran. Kunnen we een bezichtiging plannen?",
     },
     footer: { rights: "Alle rechten voorbehouden" },
   },
@@ -284,8 +284,8 @@ const I18N = {
       title: "Besichtigung vereinbaren",
       lead: "Interesse? Melden Sie sich, wir zeigen Ihnen das Haus gerne.",
       callLabel: "Anrufen",
-      emailLabel: "E-Mail",
-      mailSubject: "Besichtigungsanfrage — Villa Joanna, Badia Gran",
+      whatsappLabel: "WhatsApp",
+      message: "Hallo, ich interessiere mich für Villa Joanna in Badia Gran. Können wir eine Besichtigung vereinbaren?",
     },
     footer: { rights: "Alle Rechte vorbehalten" },
   },
@@ -344,8 +344,8 @@ const I18N = {
       title: "Concertar una visita",
       lead: "¿Interesado? Póngase en contacto y estaremos encantados de enseñársela.",
       callLabel: "Llamar",
-      emailLabel: "Correo",
-      mailSubject: "Solicitud de visita — Villa Joanna, Badia Gran",
+      whatsappLabel: "WhatsApp",
+      message: "Hola, estoy interesado en Villa Joanna en Badia Gran. ¿Podríamos concertar una visita?",
     },
     footer: { rights: "Todos los derechos reservados" },
   },
