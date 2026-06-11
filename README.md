@@ -60,33 +60,31 @@ make serve            # serves at http://localhost:8000
 
 ## Publishing on GitHub Pages
 
-1. Merge this branch into `main`.
-2. In the repo, go to **Settings → Pages** and set **Source** to
-   **GitHub Actions**.
-3. The included workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml))
-   builds and publishes the site on every push to `main`.
+**The site is live at <https://villajoanna.online>** (public repo, served from
+`main` by GitHub Actions). The workflow
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) rebuilds and
+redeploys on **every push to `main`** — to update the live site, just commit your
+change to `main` and push. Nothing else to do.
+
+Pages is configured as **Settings → Pages → Source: GitHub Actions**, custom
+domain `villajoanna.online`, **Enforce HTTPS** on.
 
 ### Custom domain — villajoanna.online
 
-The [`CNAME`](CNAME) file is already set to `villajoanna.online`. Remaining
-steps (after Pages is live):
+Live and HTTPS-enforced. The [`CNAME`](CNAME) file pins the domain — don't delete
+it. For reference, the DNS records at the registrar (TransIP) are:
 
-1. **DNS** — at your `.online` registrar, for the apex domain `villajoanna.online`
-   add four `A` records (and optionally the `AAAA` records for IPv6):
+| Type | Host/Name | Value |
+|------|-----------|-------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `ceeram.github.io` |
 
-   | Type | Host/Name | Value |
-   |------|-----------|-------|
-   | A | `@` | `185.199.108.153` |
-   | A | `@` | `185.199.109.153` |
-   | A | `@` | `185.199.110.153` |
-   | A | `@` | `185.199.111.153` |
-   | AAAA | `@` | `2606:50c0:8000::153` |
-   | AAAA | `@` | `2606:50c0:8001::153` |
-   | AAAA | `@` | `2606:50c0:8002::153` |
-   | AAAA | `@` | `2606:50c0:8003::153` |
-
-   Optional `www`: add a `CNAME` record `www` → `ceeram.github.io`.
-
-2. In **Settings → Pages**, confirm the custom domain is `villajoanna.online`
-   and tick **Enforce HTTPS** (after DNS has propagated — can take up to a few
-   hours; the certificate is issued automatically).
+(The TransIP default parking `A`/`AAAA` records on `@` were removed — leaving them
+would round-robin visitors onto a parking page.)
