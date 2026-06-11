@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Joanna — For Sale</title>
+  <meta name="description" data-i18n="meta.description" content="Villa Joanna — a unique home for sale. View photos, details and arrange a viewing." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Villa Joanna — For Sale" />
+  <meta property="og:description" content="A unique home for sale. View photos, details and arrange a viewing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.svg" />
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand">Villa Joanna</a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#location" data-i18n="nav.location">Location</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="lang-btn">EN</button>
+        <button type="button" data-lang="nl" class="lang-btn">NL</button>
+        <button type="button" data-lang="de" class="lang-btn">DE</button>
+        <button type="button" data-lang="es" class="lang-btn">ES</button>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <img id="heroImage" src="images/hero.svg" alt="Villa Joanna" />
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">For sale</p>
+      <h1 class="hero__title">Villa Joanna</h1>
+      <p class="hero__location" id="heroLocation">Location</p>
+      <p class="hero__price" id="heroPrice">€ —</p>
+      <a href="#contact" class="btn btn--primary" data-i18n="hero.cta">Arrange a viewing</a>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ===== Quick stats ===== -->
+  <section class="stats" aria-label="Key facts">
+    <div class="stats__inner" id="statsGrid"><!-- injected --></div>
+  </section>
+
+  <!-- ===== About / description ===== -->
+  <section class="section about" id="about">
+    <div class="section__inner about__inner">
+      <div class="about__text">
+        <p class="section__eyebrow" data-i18n="about.eyebrow">The home</p>
+        <h2 class="section__title" data-i18n="about.title">A place to call your own</h2>
+        <div id="aboutBody" class="about__body"><!-- injected --></div>
+      </div>
+      <div class="about__aside">
+        <img id="aboutImage" src="images/photo-1.svg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Gallery ===== -->
+  <section class="section gallery" id="gallery">
+    <div class="section__inner">
+      <p class="section__eyebrow" data-i18n="gallery.eyebrow">Photos</p>
+      <h2 class="section__title" data-i18n="gallery.title">Gallery</h2>
+      <div class="gallery__grid" id="galleryGrid"><!-- injected --></div>
+    </div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="section features" id="features">
+    <div class="section__inner">
+      <p class="section__eyebrow" data-i18n="features.eyebrow">Details</p>
+      <h2 class="section__title" data-i18n="features.title">Features &amp; amenities</h2>
+      <ul class="features__list" id="featuresList"><!-- injected --></ul>
+    </div>
+  </section>
+
+  <!-- ===== Location ===== -->
+  <section class="section location" id="location">
+    <div class="section__inner location__inner">
+      <div class="location__text">
+        <p class="section__eyebrow" data-i18n="location.eyebrow">Where</p>
+        <h2 class="section__title" data-i18n="location.title">Location</h2>
+        <p id="locationBody" class="location__body"></p>
+        <p class="location__address" id="locationAddress"></p>
+      </div>
+      <div class="location__map">
+        <iframe id="mapFrame" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section contact" id="contact">
+    <div class="section__inner contact__inner">
+      <p class="section__eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+      <h2 class="section__title" data-i18n="contact.title">Arrange a viewing</h2>
+      <p class="contact__lead" data-i18n="contact.lead">Interested? Reach out and we'll be happy to show you around.</p>
+      <div class="contact__cards" id="contactCards"><!-- injected --></div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>Villa Joanna · <span data-i18n="footer.rights">All rights reserved</span> · <span id="footerYear"></span></p>
+  </footer>
+
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
