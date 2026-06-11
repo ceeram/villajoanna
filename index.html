@@ -151,10 +151,10 @@
   <script src="js/content.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- Analytics: GoatCounter — privacy-friendly & cookieless (no consent banner needed).
-       Set up at https://www.goatcounter.com/ ; the "villajoanna" below is the account code
-       (dashboard at https://villajoanna.goatcounter.com/). Change it if you register a different code. -->
-  <script data-goatcounter="https://villajoanna.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+  <!-- Analytics: GoatCounter via first-party custom domain (cookieless, no consent banner).
+       Beacon → stats.villajoanna.online (CNAME to villajoanna.goatcounter.com); count.js is
+       self-hosted (js/count.js) so ad-blockers can't block it. Dashboard: https://villajoanna.goatcounter.com/ -->
+  <script data-goatcounter="https://stats.villajoanna.online/count"
+          async src="js/count.js"></script>
 </body>
 </html>
