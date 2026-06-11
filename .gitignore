@@ -2,3 +2,4 @@ images/_originals/
 .DS_Store
 .commit-msg
 *.log
+.venv/
