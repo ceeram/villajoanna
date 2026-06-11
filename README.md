@@ -18,15 +18,21 @@ language on the first visit).
 Placeholder copy is written as `[[like this]]` — search for `[[` to find every
 spot that still needs your words.
 
-### Adding real photos
+### Adding / changing photos
 
-1. Drop your image files into the [`images/`](images/) folder
-   (`.jpg`/`.webp`/`.png` all work; the placeholders are `.svg`).
-2. Update the file names in `PROPERTY.heroImage`, `PROPERTY.aboutImage` and the
-   `PROPERTY.gallery` array in `js/content.js`.
+Originals are huge, so they get optimized into small web versions automatically:
 
-Tip: keep photos around 1600 px wide and compressed (e.g. via
-[squoosh.app](https://squoosh.app)) so the page stays fast.
+1. Put your full-resolution originals in `images/_originals/`
+   (`.jpg`/`.png`/`.heic`… — this folder is git-ignored, so the big files are
+   never committed).
+2. Run `make images`. This regenerates, for every original:
+   - `images/photos/<name>.jpg` — full size (max 2400 px) shown in the lightbox
+   - `images/photos/thumb/<name>.jpg` — thumbnail shown in the gallery grid
+3. Reference them in `js/content.js` by **file name only** (e.g. `"kmal4642.jpg"`)
+   in `PROPERTY.heroImage`, `PROPERTY.aboutImage` and the `PROPERTY.gallery` list.
+
+Sizes/quality are tunable, e.g. `FULL_MAX=3000 make images`. Run `make help` to
+see all commands.
 
 ### The map
 
@@ -38,8 +44,8 @@ OpenStreetMap. No API key needed.
 It's just static files, so any static server works:
 
 ```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
+make serve            # serves at http://localhost:8000
+# or: python3 -m http.server 8000
 ```
 
 ## Publishing on GitHub Pages

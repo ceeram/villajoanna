@@ -7,8 +7,8 @@
  *  2. I18N      — translated copy for English / Dutch / German / Spanish.
  *
  *  Anything written as "[[...]]" is placeholder text — replace it with the real
- *  details. To add or replace photos, drop files into the /images folder and
- *  list their file names in PROPERTY.gallery below.
+ *  details. To add or replace photos: put originals in images/_originals/, run
+ *  `make images`, then list the file names in PROPERTY.gallery below.
  * ===========================================================================*/
 
 const PROPERTY = {
@@ -21,20 +21,58 @@ const PROPERTY = {
   // (Approximate location of Badia Gran, Mallorca — refine if you like.)
   coords: { lat: 39.4039, lng: 2.7456 },
 
+  // Photos. Give just the file name — the site looks in images/photos/ for the
+  // full version and images/photos/thumb/ for the gallery thumbnail. (Put your
+  // originals in images/_originals/ and run `make images` to (re)generate both.)
+
   // The big image at the top of the page.
-  heroImage: "images/hero.svg",
+  heroImage: "kmal4642.jpg",
 
-  // The image shown next to the "About" text.
-  aboutImage: "images/photo-1.svg",
+  // The image shown next to the "About" text (portrait works best here).
+  aboutImage: "89a0602.jpg",
 
-  // Gallery photos. Add as many as you like.
+  // Gallery photos, in display order. Reorder / add / remove freely.
   gallery: [
-    "images/photo-1.svg",
-    "images/photo-2.svg",
-    "images/photo-3.svg",
-    "images/photo-4.svg",
-    "images/photo-5.svg",
-    "images/photo-6.svg",
+    // — Exterior & pool —
+    "kmal4683.jpg",
+    "kmal4676.jpg",
+    "kmal4656.jpg",
+    "kmal5116.jpg",
+    "kmal5072.jpg",
+    "kmal5080.jpg",
+    "kmal5037.jpg",
+    // — Living room —
+    "kmal4824.jpg",
+    "kmal4802.jpg",
+    "kmal4817.jpg",
+    "kmal4845.jpg",
+    "kmal4859.jpg",
+    "89a0592.jpg",
+    // — Kitchen & dining —
+    "kmal4740.jpg",
+    "kmal4747.jpg",
+    "kmal4762.jpg",
+    "kmal4776.jpg",
+    // — Conservatory —
+    "kmal4734.jpg",
+    "kmal4719.jpg",
+    // — Bedrooms —
+    "kmal5013.jpg",
+    "kmal5027.jpg",
+    "kmal4999-bis.jpg",
+    "kmal4951.jpg",
+    "kmal4972.jpg",
+    "kmal4873.jpg",
+    "kmal4908.jpg",
+    "kmal4937.jpg",
+    // — Bathrooms —
+    "kmal4915.jpg",
+    "89a0596.jpg",
+    "kmal5060.jpg",
+    // — Study & extras —
+    "kmal4985.jpg",
+    "89a0610.jpg",
+    "kmal5040.jpg",
   ],
 
   // Key facts shown in the stats bar. `value` is language-independent;

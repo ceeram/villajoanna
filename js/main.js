@@ -10,6 +10,10 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
+  // Photo file names in content.js resolve to these folders.
+  const fullSrc = (name) => "images/photos/" + name;
+  const thumbSrc = (name) => "images/photos/thumb/" + name;
+
   // Resolve a dotted key path ("about.body") against an object.
   function resolve(obj, path) {
     return path.split(".").reduce((o, k) => (o == null ? o : o[k]), obj);
@@ -52,7 +56,7 @@
     // Hero
     $("#heroLocation").textContent = t.hero.location;
     $("#heroPrice").textContent = PROPERTY.price;
-    $("#heroImage").src = PROPERTY.heroImage;
+    $("#heroImage").src = fullSrc(PROPERTY.heroImage);
 
     // Stats
     $("#statsGrid").innerHTML = PROPERTY.stats
@@ -65,7 +69,7 @@
       .join("");
 
     // About
-    $("#aboutImage").src = PROPERTY.aboutImage;
+    $("#aboutImage").src = fullSrc(PROPERTY.aboutImage);
     $("#aboutBody").innerHTML = t.about.body.map((p) => `<p>${p}</p>`).join("");
 
     // Features
@@ -110,9 +114,9 @@
   function renderGallery() {
     $("#galleryGrid").innerHTML = PROPERTY.gallery
       .map(
-        (src, i) =>
+        (name, i) =>
           `<button class="gallery__item" data-index="${i}" aria-label="Photo ${i + 1}">
-            <img src="${src}" alt="Villa Joanna — photo ${i + 1}" loading="lazy" />
+            <img src="${thumbSrc(name)}" alt="Villa Joanna — photo ${i + 1}" loading="lazy" />
           </button>`
       )
       .join("");
@@ -120,7 +124,7 @@
 
   function openLightbox(i) {
     lightboxIndex = (i + PROPERTY.gallery.length) % PROPERTY.gallery.length;
-    $("#lightboxImg").src = PROPERTY.gallery[lightboxIndex];
+    $("#lightboxImg").src = fullSrc(PROPERTY.gallery[lightboxIndex]);
     const lb = $("#lightbox");
     lb.classList.add("is-open");
     lb.setAttribute("aria-hidden", "false");
