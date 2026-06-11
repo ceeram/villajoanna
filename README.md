@@ -66,17 +66,27 @@ make serve            # serves at http://localhost:8000
 3. The included workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml))
    builds and publishes the site on every push to `main`.
 
-### Custom domain
+### Custom domain — villajoanna.online
 
-Once you've chosen a domain:
+The [`CNAME`](CNAME) file is already set to `villajoanna.online`. Remaining
+steps (after Pages is live):
 
-1. Create a file named `CNAME` in the repo root containing just the domain,
-   e.g. `villajoanna.com`.
-2. At your domain registrar, point DNS at GitHub Pages:
-   - **Apex domain** (`example.com`): four `A` records to
-     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
-     `185.199.111.153` (and/or the equivalent `AAAA` records).
-   - **Subdomain** (`www.example.com`): a `CNAME` record to
-     `<your-github-username>.github.io`.
-3. In **Settings → Pages**, enter the custom domain and enable
-   **Enforce HTTPS**.
+1. **DNS** — at your `.online` registrar, for the apex domain `villajoanna.online`
+   add four `A` records (and optionally the `AAAA` records for IPv6):
+
+   | Type | Host/Name | Value |
+   |------|-----------|-------|
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | AAAA | `@` | `2606:50c0:8000::153` |
+   | AAAA | `@` | `2606:50c0:8001::153` |
+   | AAAA | `@` | `2606:50c0:8002::153` |
+   | AAAA | `@` | `2606:50c0:8003::153` |
+
+   Optional `www`: add a `CNAME` record `www` → `ceeram.github.io`.
+
+2. In **Settings → Pages**, confirm the custom domain is `villajoanna.online`
+   and tick **Enforce HTTPS** (after DNS has propagated — can take up to a few
+   hours; the certificate is issued automatically).
