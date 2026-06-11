@@ -81,7 +81,7 @@
     $("#locationBody").textContent = t.location.body;
     $("#locationAddress").textContent = t.location.address;
     const { lat, lng } = PROPERTY.coords;
-    const d = 0.01;
+    const d = PROPERTY.mapRadius || 0.01;
     const bbox = [lng - d, lat - d, lng + d, lat + d].join("%2C");
     $("#mapFrame").src =
       `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
@@ -106,6 +106,35 @@
         </a>`
       );
     $("#contactCards").innerHTML = cards.join("");
+
+    // Documents
+    renderDocuments(t);
+  }
+
+  /* ---------- documents ---------- */
+  function renderDocuments(t) {
+    const docs = PROPERTY.documents || [];
+    const section = $("#documents");
+    const navLink = $("#navDocuments");
+    if (!docs.length) {
+      if (section) section.style.display = "none";
+      if (navLink) navLink.style.display = "none";
+      return;
+    }
+    if (section) section.style.display = "";
+    if (navLink) navLink.style.display = "";
+    $("#documentsGrid").innerHTML = docs
+      .map((d) => {
+        const title = (t.documents.items && t.documents.items[d.key]) || d.key;
+        return `<a class="document__card" href="documents/${encodeURI(d.file)}" target="_blank" rel="noopener">
+          <span class="document__preview"><img src="documents/previews/${encodeURI(d.preview)}" alt="${title}" loading="lazy" /></span>
+          <span class="document__meta">
+            <span class="document__title">${title}</span>
+            <span class="document__view">${t.documents.view} &rarr;</span>
+          </span>
+        </a>`;
+      })
+      .join("");
   }
 
   /* ---------- gallery + lightbox ---------- */

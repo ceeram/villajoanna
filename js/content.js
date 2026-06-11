@@ -21,6 +21,9 @@ const PROPERTY = {
   // (Approximate location of Badia Gran, Mallorca — refine if you like.)
   coords: { lat: 39.4039, lng: 2.7456 },
 
+  // How far out the map is zoomed (half-view width in degrees; larger = wider).
+  mapRadius: 0.16,
+
   // Photos. Give just the file name — the site looks in images/photos/ for the
   // full version and images/photos/thumb/ for the gallery thumbnail. (Put your
   // originals in images/_originals/ and run `make images` to (re)generate both.)
@@ -75,6 +78,17 @@ const PROPERTY = {
     "kmal5040.jpg",
   ],
 
+  // Downloadable documents (PDFs in /documents). Run `make docs` to generate the
+  // first-page previews into /documents/previews. Leave the list empty to hide
+  // the Documents section. Each entry:
+  //   key     — matches a title in I18N[lang].documents.items
+  //   file    — the PDF file name in /documents
+  //   preview — the preview image in /documents/previews
+  documents: [
+    { key: "label", file: "energy-label.pdf", preview: "energy-label.jpg" },
+    { key: "certificate", file: "energy-certificate.pdf", preview: "energy-certificate.jpg" },
+  ],
+
   // Key facts shown in the stats bar. `value` is language-independent;
   // the label comes from I18N[lang].stats[key].
   stats: [
@@ -99,7 +113,7 @@ const I18N = {
   /* ===================== ENGLISH ===================== */
   en: {
     meta: { description: "Villa Joanna — a spacious detached house with private pool for sale in Badia Gran, Mallorca. View photos, details and arrange a viewing." },
-    nav: { about: "About", gallery: "Gallery", features: "Features", location: "Location", contact: "Contact" },
+    nav: { about: "About", gallery: "Gallery", features: "Features", documents: "Documents", location: "Location", contact: "Contact" },
     hero: { eyebrow: "For sale", location: "Badia Gran, Mallorca", cta: "Arrange a viewing" },
     stats: { bedrooms: "Bedrooms", bathrooms: "Bathrooms", living: "Living area", plot: "Plot", year: "Built" },
     about: {
@@ -112,6 +126,15 @@ const I18N = {
       ],
     },
     gallery: { eyebrow: "Photos", title: "Gallery" },
+    documents: {
+      eyebrow: "Documents",
+      title: "Documents & certificates",
+      view: "View PDF",
+      items: {
+        label: "Energy label",
+        certificate: "Energy performance certificate",
+      },
+    },
     features: {
       eyebrow: "Details",
       title: "Features & amenities",
@@ -150,7 +173,7 @@ const I18N = {
   /* ===================== DUTCH ===================== */
   nl: {
     meta: { description: "Villa Joanna — ruim vrijstaand huis met privézwembad te koop in Badia Gran, Mallorca. Bekijk foto's, details en plan een bezichtiging." },
-    nav: { about: "Over", gallery: "Foto's", features: "Kenmerken", location: "Locatie", contact: "Contact" },
+    nav: { about: "Over", gallery: "Foto's", features: "Kenmerken", documents: "Documenten", location: "Locatie", contact: "Contact" },
     hero: { eyebrow: "Te koop", location: "Badia Gran, Mallorca", cta: "Plan een bezichtiging" },
     stats: { bedrooms: "Slaapkamers", bathrooms: "Badkamers", living: "Woonoppervlak", plot: "Perceel", year: "Bouwjaar" },
     about: {
@@ -163,6 +186,15 @@ const I18N = {
       ],
     },
     gallery: { eyebrow: "Foto's", title: "Galerij" },
+    documents: {
+      eyebrow: "Documenten",
+      title: "Documenten & certificaten",
+      view: "Bekijk pdf",
+      items: {
+        label: "Energielabel",
+        certificate: "Energieprestatiecertificaat",
+      },
+    },
     features: {
       eyebrow: "Details",
       title: "Kenmerken & voorzieningen",
@@ -201,7 +233,7 @@ const I18N = {
   /* ===================== GERMAN ===================== */
   de: {
     meta: { description: "Villa Joanna — geräumiges freistehendes Haus mit privatem Pool zu verkaufen in Badia Gran, Mallorca. Fotos und Details ansehen und eine Besichtigung vereinbaren." },
-    nav: { about: "Über", gallery: "Galerie", features: "Ausstattung", location: "Lage", contact: "Kontakt" },
+    nav: { about: "Über", gallery: "Galerie", features: "Ausstattung", documents: "Dokumente", location: "Lage", contact: "Kontakt" },
     hero: { eyebrow: "Zu verkaufen", location: "Badia Gran, Mallorca", cta: "Besichtigung vereinbaren" },
     stats: { bedrooms: "Schlafzimmer", bathrooms: "Badezimmer", living: "Wohnfläche", plot: "Grundstück", year: "Baujahr" },
     about: {
@@ -214,6 +246,15 @@ const I18N = {
       ],
     },
     gallery: { eyebrow: "Fotos", title: "Galerie" },
+    documents: {
+      eyebrow: "Dokumente",
+      title: "Dokumente & Zertifikate",
+      view: "PDF ansehen",
+      items: {
+        label: "Energielabel",
+        certificate: "Energieausweis",
+      },
+    },
     features: {
       eyebrow: "Details",
       title: "Ausstattung & Annehmlichkeiten",
@@ -252,7 +293,7 @@ const I18N = {
   /* ===================== SPANISH ===================== */
   es: {
     meta: { description: "Villa Joanna — amplia casa independiente con piscina privada en venta en Badia Gran, Mallorca. Vea fotos, detalles y concierte una visita." },
-    nav: { about: "Inicio", gallery: "Galería", features: "Características", location: "Ubicación", contact: "Contacto" },
+    nav: { about: "Inicio", gallery: "Galería", features: "Características", documents: "Documentos", location: "Ubicación", contact: "Contacto" },
     hero: { eyebrow: "En venta", location: "Badia Gran, Mallorca", cta: "Concertar una visita" },
     stats: { bedrooms: "Dormitorios", bathrooms: "Baños", living: "Superficie", plot: "Parcela", year: "Año" },
     about: {
@@ -265,6 +306,15 @@ const I18N = {
       ],
     },
     gallery: { eyebrow: "Fotos", title: "Galería" },
+    documents: {
+      eyebrow: "Documentos",
+      title: "Documentos y certificados",
+      view: "Ver PDF",
+      items: {
+        label: "Etiqueta energética",
+        certificate: "Certificado de eficiencia energética",
+      },
+    },
     features: {
       eyebrow: "Detalles",
       title: "Características y comodidades",

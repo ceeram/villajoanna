@@ -34,10 +34,20 @@ Originals are huge, so they get optimized into small web versions automatically:
 Sizes/quality are tunable, e.g. `FULL_MAX=3000 make images`. Run `make help` to
 see all commands.
 
+### Adding / changing documents (PDFs)
+
+1. Put the PDF in `documents/`.
+2. Run `make docs` to generate a first-page preview image into
+   `documents/previews/`.
+3. Add an entry to `PROPERTY.documents` in `js/content.js` (`file`, `preview`
+   and a `key`), and add the matching title under `documents.items` for each
+   language. Leave the list empty to hide the Documents section entirely.
+
 ### The map
 
-`PROPERTY.coords` holds the latitude/longitude shown on the embedded
-OpenStreetMap. No API key needed.
+`PROPERTY.coords` holds the latitude/longitude of the marker, and
+`PROPERTY.mapRadius` controls how far the embedded OpenStreetMap is zoomed out
+(bigger = wider view). No API key needed.
 
 ## Previewing locally
 

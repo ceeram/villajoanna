@@ -250,6 +250,36 @@ a { color: inherit; text-decoration: none; }
   width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
 }
 
+/* ---------- documents ---------- */
+.documents__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 240px));
+  gap: 1.6rem;
+  justify-content: center;
+}
+.document__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(40, 34, 22, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.document__card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.document__preview {
+  display: block;
+  aspect-ratio: 1 / 1.414;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.document__preview img { width: 100%; height: 100%; object-fit: contain; }
+.document__meta { padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.document__title { font-weight: 500; line-height: 1.35; }
+.document__view { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+
 /* ---------- location ---------- */
 .location__inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center; }
 .location__body { color: var(--muted); font-size: 1.05rem; }
