@@ -156,7 +156,7 @@ const I18N = {
     location: {
       eyebrow: "Where",
       title: "Location",
-      body: "Tucked along the west coast of Mallorca, Badia Gran is just 20 minutes from the airport and 25 from the heart of Palma. It's a quiet, friendly village where everything is on your doorstep — supermarket, pharmacy, medical centre, physiotherapist, a well-regarded primary school, restaurants and cafés, all within an easy stroll.",
+      body: "Set on the Bay of Palma in the sunny south of Mallorca, Badia Gran is just 20 minutes from the airport and 25 from the heart of Palma. It's a quiet, friendly village where everything is on your doorstep — supermarket, pharmacy, medical centre, physiotherapist, a well-regarded primary school, restaurants and cafés, all within an easy stroll.",
       address: "Badia Gran, Llucmajor — Mallorca, Spain",
     },
     contact: {
@@ -216,7 +216,7 @@ const I18N = {
     location: {
       eyebrow: "Waar",
       title: "Locatie",
-      body: "Badia Gran ligt aan de westkust van Mallorca, op zo'n 20 minuten van het vliegveld en 25 minuten van Palma. Een rustig en gemoedelijk dorp waar u toch werkelijk alles binnen handbereik heeft: supermarkt, apotheek, artsencentrum, fysiotherapeut, een fijne basisschool, restaurants en gezellige cafés — allemaal op loopafstand.",
+      body: "Badia Gran ligt aan de Baai van Palma, in het zonnige zuiden van Mallorca, op zo'n 20 minuten van het vliegveld en 25 minuten van Palma. Een rustig en gemoedelijk dorp waar u toch werkelijk alles binnen handbereik heeft: supermarkt, apotheek, artsencentrum, fysiotherapeut, een fijne basisschool, restaurants en gezellige cafés — allemaal op loopafstand.",
       address: "Badia Gran, Llucmajor — Mallorca, Spanje",
     },
     contact: {
@@ -276,7 +276,7 @@ const I18N = {
     location: {
       eyebrow: "Wo",
       title: "Lage",
-      body: "Badia Gran liegt an der Westküste Mallorcas, nur etwa 20 Minuten vom Flughafen und 25 Minuten von Palma entfernt. Ein ruhiger, gemütlicher Ort, in dem Sie dennoch alles in unmittelbarer Nähe haben: Supermarkt, Apotheke, Ärztezentrum, Physiotherapie, eine schöne Grundschule sowie Restaurants und Cafés — alles bequem zu Fuß erreichbar.",
+      body: "Badia Gran liegt an der Bucht von Palma, im sonnigen Süden Mallorcas, nur etwa 20 Minuten vom Flughafen und 25 Minuten von Palma entfernt. Ein ruhiger, gemütlicher Ort, in dem Sie dennoch alles in unmittelbarer Nähe haben: Supermarkt, Apotheke, Ärztezentrum, Physiotherapie, eine schöne Grundschule sowie Restaurants und Cafés — alles bequem zu Fuß erreichbar.",
       address: "Badia Gran, Llucmajor — Mallorca, Spanien",
     },
     contact: {
@@ -336,7 +336,7 @@ const I18N = {
     location: {
       eyebrow: "Dónde",
       title: "Ubicación",
-      body: "Badia Gran se encuentra en la costa oeste de Mallorca, a tan solo 20 minutos del aeropuerto y 25 de Palma. Un pueblo tranquilo y acogedor en el que, sin embargo, lo tendrá todo a mano: supermercado, farmacia, centro médico, fisioterapeuta, una estupenda escuela de primaria, restaurantes y cafeterías — todo a un agradable paseo.",
+      body: "Badia Gran se encuentra en la Bahía de Palma, en el soleado sur de Mallorca, a tan solo 20 minutos del aeropuerto y 25 de Palma. Un pueblo tranquilo y acogedor en el que, sin embargo, lo tendrá todo a mano: supermercado, farmacia, centro médico, fisioterapeuta, una estupenda escuela de primaria, restaurantes y cafeterías — todo a un agradable paseo.",
       address: "Badia Gran, Llucmajor — Mallorca, España",
     },
     contact: {
